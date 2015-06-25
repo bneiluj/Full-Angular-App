@@ -18,6 +18,6 @@ angular
              * Define base
              */
             $stateProvider.state('base', {
-                abstract: true;
+                abstract: true
             });
         }]);

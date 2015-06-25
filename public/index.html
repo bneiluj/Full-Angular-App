@@ -15,9 +15,8 @@
       <!-- For better use angular must be place in the header -->
       <script src="/vendor/angular/angular.js"></script>
     </head>
-    <body ng-app="app" layout="column" id="app">
+    <body ng-app="app" id="app">
         <!-- Main APP-->
-        Test
         <div ui-view id="content"></div>
         <!--
           ->Add scripts before right before body ends for better performance
@@ -30,5 +29,9 @@
         <!-- App Script -->
         <script src="/app/app.js"></script>
         <script src="/app/state.js"></script>
+        <!-- Components -->
+        <script src="/app/components/login/loginModule.js"></script>
+        <script src="/app/components/login/loginState.js"></script>
+        <script src="/app/components/login/loginCtrl.js"></script>
     </body>
 </html>

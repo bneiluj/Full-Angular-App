@@ -22,5 +22,5 @@ angular
   */
 angular
     .module('app.components', [
-
+        'app.components.login'
     ]);
