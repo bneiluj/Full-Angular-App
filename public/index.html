@@ -1,0 +1,34 @@
+<!doctype html>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+      <title>Simple Login App</title>
+      <meta name="description" content="">
+      <!-- Nice fonts ;)-->
+      <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+      <!-- Links -->
+      <link rel="stylesheet" href="/css/styles.css">
+
+      <!-- For better use angular must be place in the header -->
+      <script src="/vendor/angular/angular.js"></script>
+    </head>
+    <body ng-app="app" layout="column" id="app">
+        <!-- Main APP-->
+        Test
+        <div ui-view id="content"></div>
+        <!--
+          ->Add scripts before right before body ends for better performance
+        -->
+        <script src="/vendor/lodash/dist/lodash.min.js"></script>
+        <script src="/vendor/angular-resource/angular-resource.min.js"></script>
+        <script src="/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <!-- Bootstrap-ui - nice to have with angularjs and especially with this task-->
+        <script src="/vendor/angular-bootstrap/ui-bootstrap.min.js"></script>"
+        <!-- App Script -->
+        <script src="/app/app.js"></script>
+        <script src="/app/state.js"></script>
+    </body>
+</html>
