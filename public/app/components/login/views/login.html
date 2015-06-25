@@ -17,8 +17,9 @@
                     <fieldset>
                         <div
                             class="form-group"
-                            ng-class="{'has-error': !checkForm.hasUserNameError
-                                && checkForm.submitted}">
+                            id="usernameGroup"
+                            ng-class="{'has-error': formVerifyObject.formValidation.hasUserNameError
+                                && formVerifyObject.formValidation.submitted}">
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
                                     Username
@@ -36,8 +37,9 @@
                         </div>
                         <div
                             class="form-group"
-                            ng-class="{'has-error': !checkForm.hasPasswordError
-                                && checkForm.submitted}">
+                            id="passwordGroup"
+                            ng-class="{'has-error': formVerifyObject.formValidation.hasPasswordError
+                                && formVerifyObject.formValidation.submitted}">
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
                                     Password
@@ -60,7 +62,7 @@
                                 type="submit"
                                 id="login-btn"
                                 ng-click="login(user)"
-                                class="btn btn-success btn-lg btn-block">
+                                class="btn btn-primary btn-lg btn-block">
                                 Log In
                             </button>
                         </div>

@@ -7,14 +7,6 @@ angular
         ) {
             'use strict';
 
-            //Initiate checking form
-            //So, DOM is not pollutated
-            $scope.checkForm = {
-                hasUserNameError: false,
-                hasPasswordError: false,
-                submitted: false
-            };
-
             /**
              * FormValidator constructor
              * @argument  {obj} Information about the user
@@ -22,21 +14,41 @@ angular
             function FormValidator(form) {
                 this.username = form.username;
                 this.password = form.password;
+                this.formValidation = {
+                    hasUserNameError: false,
+                    hasPasswordError: false,
+                    submitted: false
+                }
             }
 
             /**
-             * validateusername prototype
-             * @return {boolean} True if name is defined, false of not
+             * validateUsername prototype
+             * @return {boolean} True if name is not blank, false if not
              */
-            FormValidator.prototype.validateusername = function () {
-                return this.username !== undefined;
+            FormValidator.prototype.validateUsername = function () {
+                this.formValidation.hasUserNameError =
+                    !(this.username !== undefined
+                        && this.username.length > 0);
             };
             /**
              * validatePassword prototype
-             * @return {boolean} True if name is defined, false of not
+             * @assign {boolean} True if password is not blank, false if not
              */
             FormValidator.prototype.validatePassword = function () {
-                return this.password !== undefined;
+                this.formValidation.hasPasswordError =
+                    !(this.password !== undefined
+                        && this.password.length > 0);
+            };
+
+            /**
+             * Check the form
+             * eg: Run checking
+             * @assign {boolean} True to the submit form
+             */
+            FormValidator.prototype.checkForm = function () {
+                this.validateUsername();
+                this.validatePassword();
+                this.formValidation.submitted = true;
             };
 
             /**
@@ -45,12 +57,10 @@ angular
              */
             $scope.login = function (loginForm) {
                 var formVerifyObject = new FormValidator(loginForm);
+                //Verify info by calling prototypes
+                formVerifyObject.checkForm();
                 //Bind information to the DOM
-                $scope.checkForm = {
-                    hasUserNameError: formVerifyObject.validateusername(),
-                    hasPasswordError: formVerifyObject.validatePassword(),
-                    submitted: true
-                };
+                $scope.formVerifyObject = formVerifyObject;
             };
 
         }]);

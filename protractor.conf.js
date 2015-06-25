@@ -8,7 +8,7 @@ exports.config = {
 
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
-        'browserName': 'chrome'
+        'browserName': ['explorer']
     },
 
     //Run it on 9001 port

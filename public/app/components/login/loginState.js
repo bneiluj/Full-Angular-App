@@ -8,7 +8,7 @@ angular
 
             $stateProvider
                 .state('login', {
-                    url: '/',
+                    url: '/login',
                     title: 'login page',
                     parent: 'base',
                     views: {

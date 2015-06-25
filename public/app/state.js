@@ -12,7 +12,7 @@ angular
             /**
              * For any unmatched url, redirect to '/'
              */
-            $urlRouterProvider.otherwise('/');
+            $urlRouterProvider.otherwise('/login');
 
             /**
              * Define base
