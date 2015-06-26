@@ -1,0 +1,3 @@
+Copyright (c) JULIEN BOUTELOUP
+
+To not use the code from this project without permission.

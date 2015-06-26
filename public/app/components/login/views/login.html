@@ -1,0 +1,79 @@
+<div class="page-signin">
+    <div class="signin-header">
+        <div class="container logo text-center">
+            <section class="logo">
+                <a href="#/">Just EAT</a>
+            </section>
+        </div>
+    </div>
+    <div class="signin-body">
+        <div class="container">
+            <div class="form-container">
+                <form
+                    name="loginForm"
+                    novalidate
+                    class="form-horizontal"
+                    >
+                    <fieldset>
+                        <div
+                            class="form-group"
+                            id="usernameGroup"
+                            ng-class="{'has-error': formVerifyObject.formValidation.hasUserNameError
+                                && formVerifyObject.formValidation.submitted}">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    Username
+                                </span>
+                                <input
+                                    type="username"
+                                    ng-init="user.username = undefined"
+                                    class="form-control"
+                                    name="username"
+                                    id="username"
+                                    ng-model="user.username"
+                                    placeholder="Enter your username"
+                                    required>
+                            </div>
+                        </div>
+                        <div
+                            class="form-group"
+                            id="passwordGroup"
+                            ng-class="{'has-error': formVerifyObject.formValidation.hasPasswordError
+                                && formVerifyObject.formValidation.submitted}">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    Password
+                                </span>
+                                <input
+                                    type="password"
+                                    ng-init="user.password = undefined"
+                                    class="form-control"
+                                    id="password"
+                                    class="form-control"
+                                    placeholder="Enter your password"
+                                    ng-model="user.password"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        </div>
+                        <div class="form-group">
+                            <button
+                                type="submit"
+                                id="login-btn"
+                                ng-click="login(user)"
+                                class="btn btn-primary btn-lg btn-block">
+                                Log In
+                            </button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <section>
+                    <p class="text-center text-muted text-small"> - Just EAT - </p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,32 @@
+.page-signin {
+    .signin-header {
+        padding: 10px 0px;
+        background-color: #FFFFFF;
+        text-color: #000000;
+        border: 1px solid #C2C2C2;
+        .container {
+            &.logo {
+              width: 130px;
+              border: 1px solid #ffffff;
+              background-color: #ffffff;
+              border-radius: 15px;
+
+              a {
+                  font-size: 20px;
+                  font-weight: bold;
+                  color: #ce0b10;
+              }
+            }
+        }
+    }
+
+    .signin-body {
+        border-top: 1px solid lighten($body-bg, 2%);
+        padding: 10px 10px;
+    }
+
+    .form-container {
+        max-width: 380px;
+        margin: 10px auto;
+    }
+}

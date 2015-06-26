@@ -1,0 +1,84 @@
+//== Colors
+//
+//## Gray and company colors for use across Bootstrap.
+
+$gray-darker:            lighten(#000, 13.5%) !default; // #222
+$gray-dark:              lighten(#000, 20%) !default;   // #333
+$gray:                   lighten(#000, 33.5%) !default; // #555
+$gray-light:             lighten(#000, 60%) !default;   // #999
+$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
+
+$company-logo:		      	#ce0b10 !default;
+$company-primary:         #ce0b10 !default;
+$company-success:         #fec752 !default;
+
+$dark:                  #222533;
+$bright:                #fafafa;
+$reverse:               #fff;
+
+$state-default-bg:      #f6f6f6; // also: pagination bg
+$state-default-border:  darken(adjust-hue($state-default-bg, -10), 5%);
+
+
+//== Scaffolding
+//
+// ## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+
+$body-bg:             				 #f3f3f3 !default;
+//** Global text color on `<body>`.
+$text-color:           				 #767676 !default;
+$text-color-background-filled:     	 #000 !default;
+$text-color-background-empty: 		 $company-primary !default;
+
+
+//** Global textual link color.
+$link-color:            $gray-dark !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%) !default;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  'Aleo-Regular', Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+
+$font-size-base:          12px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    inherit !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+
+
+//-- Iconography
+//
+//## Specify custom locations of the include Glyphicons icon font. Useful for those including Bootstrap via Bower.
+
+$icon-font-path: "bootstrap/" !default;
+$icon-font-name:          "glyphicons-halflings-regular" !default;
+$icon-font-svg-id:        "glyphicons_halflingsregular" !default;
+$icon-primary-color:              $company-primary ;
+$icon-primary-bg:                 $company-primary ;
+
+//Buttons
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 $company-primary !default;
+$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+
+$btn-success-color:              #fff !default;
+$btn-success-bg:                 $company-success !default;
+$btn-success-border:             darken($btn-success-bg, 5%) !default;
