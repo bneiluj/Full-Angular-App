@@ -9,7 +9,7 @@ angular
 
             /**
              * FormValidator constructor
-             * @argument  {obj} Information about the user
+             * @argument  {obj} username and password
              */
             function FormValidator(form) {
                 this.username = form.username;
@@ -18,7 +18,7 @@ angular
                     hasUserNameError: false,
                     hasPasswordError: false,
                     submitted: false
-                }
+                };
             }
 
             /**
@@ -59,7 +59,7 @@ angular
                 var formVerifyObject = new FormValidator(loginForm);
                 //Verify info by calling prototypes
                 formVerifyObject.checkForm();
-                //Bind information to the DOM
+                //Bind basic info to the DOM
                 $scope.formVerifyObject = formVerifyObject;
             };
 

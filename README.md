@@ -3,6 +3,44 @@
   - Full E2E + Unit tests
   - Entire code wrote by Julien Bouteloup in less than 5 hours: Tests + JS + UI/UX + CSS
 
+## Installation
+
+Install dependencies
+
+	$ npm install
+
+	$ bower install
+
+##Grunt tasks
+
+Run server and init livereload
+
+  $ grunt server
+
+Run full test suite
+
+  $ grunt test
+
+Run end to end tests on protractor - Explorer, Chrome and Firefox
+
+  $ grunt e2e
+
+Run unit tests using Karma
+
+  $ grunt unit
+
+Generate css file from sass
+
+  $ grunt sass
+
+Watch files and perform tasks, currently sass, jslint
+
+  $ grunt watch
+
+##Test the app
+
+  $ grunt server
+
 #Task requirements
 
   - Create an HTML file that has a login form with a username and password. Use semantic, accessible and valid mark-up.
@@ -24,7 +62,8 @@
   - Test drive the code via unit tests (Jasmine or an equivalent). Should work in IE7+ as well as more modern browsers.
       $ Respected. Tested and Works Explorer, Safari, Chrome, Firebox
 
-# To improve
+
+# To be improved
   - Add remember me
   - Use directive for form verify
   - Add more checks: correct email format, better password security, etc...
