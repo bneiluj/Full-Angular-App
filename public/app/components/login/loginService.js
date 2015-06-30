@@ -103,6 +103,7 @@ angular
                      * Redirection - treat login process when success
                      */
                     redirection: function () {
+                        //TODO Not part of the task 
                         console.log("Proceed to redirection");
                     }
                 };

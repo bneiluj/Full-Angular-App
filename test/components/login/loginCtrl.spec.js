@@ -1,4 +1,4 @@
-ddescribe('login spec', function () {
+describe('login spec', function () {
     'use strict';
 
     //Variables declaration
@@ -41,14 +41,14 @@ ddescribe('login spec', function () {
     /**
      * Login Ctrl should be defined
      */
-    iit('should be defined', function() {
+    it('should be defined', function() {
         expect(controller).toBeDefined();
     });
     /**
      * Check if username and password are defined when init
      **/
     it('should not contain username and password when init', function() {
-        expect($scope.user).toBeUndefined();
+        expect($scope.formVerifyObject).toBeUndefined();
     });
     /**
      * Should call loginService when login button is triggered
@@ -56,5 +56,19 @@ ddescribe('login spec', function () {
     it('should call loginService when login button is triggered', function() {
         $scope.login(loginMock.goodLogin.user);
         expect(loginService.login).toHaveBeenCalled();
+    });
+    /**
+     * Should call loginService when login button is triggered
+     **/
+    it('should call loginService when login button is triggered', function() {
+        $scope.login(loginMock.goodLogin.user);
+        expect(loginService.login).toHaveBeenCalled();
+    });
+    /**
+     * Should define formVerifyObject when login button is triggered
+     **/
+    it('Should define formVerifyObject when login button is triggered', function() {
+        $scope.login(loginMock.goodLogin.user);
+        expect($scope.formVerifyObject).toBeDefined();
     });
 });
