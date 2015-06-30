@@ -68,16 +68,20 @@ angular
                 FormValidator.prototype.isFormValid = function () {
                     //Check the form
                     this.checkForm();
-                    return _.every(this.formValidation, function (elem) {
-                        console.log("elem: ", elem);
-                    });
+                    return !this.formValidation.hasUserNameError
+                        && !this.formValidation.hasPasswordError
+                        && this.formValidation.submitted;
                 };
 
                 return {
                     /**
                      * Login method
+                     * @param {obj} loginForm
+                     * @return {obj} form if not vaid
+                     * call the redirection if the form is valid
                      */
                     login: function (loginForm) {
+                        //Handle when first init
                         if (this.formVerifyObject === undefined) {
                             //create constructor
                             this.formVerifyObject = new FormValidator(loginForm);
@@ -85,15 +89,18 @@ angular
                             //update form without creating new constructor
                             this.formVerifyObject.updateFormUserInfo(loginForm);
                         }
-                        //Verify info by calling prototypes
-                        this.formVerifyObject.checkForm();
-                        return this.formVerifyObject;
+                        /**
+                         *  Redirection on success - or return form for expection
+                         *  Don't need to polute the dom
+                         */
+                        if (!this.formVerifyObject.isFormValid()) {
+                            return this.formVerifyObject;
+                        }
+                        //if form passes
+                        this.redirection();
                     },
-                    /**
-                     * Is form valid method
-                     */
-                    isFormValid: function () {
-                        return this.formVerifyObject.isFormValid();
+                    redirection: function () {
+                        console.log("Proceed to redirection");
                     }
                 };
             }]);
