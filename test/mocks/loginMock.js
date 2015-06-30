@@ -48,6 +48,13 @@ angular
                     hasPasswordError: true,
                     submitted: true
                 }
+            },
+            errorBothCheckForm: {
+                "checkForm" : {
+                    hasUserNameError: true,
+                    hasPasswordError: true,
+                    submitted: true
+                }
             }
         };
     });

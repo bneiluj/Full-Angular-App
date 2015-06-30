@@ -90,7 +90,7 @@ angular
                             this.formVerifyObject.updateFormUserInfo(loginForm);
                         }
                         /**
-                         *  Redirection on success - or return form for expection
+                         *  Redirection on success - or return form for inspection
                          *  Don't need to polute the dom
                          */
                         if (!this.formVerifyObject.isFormValid()) {
@@ -99,6 +99,9 @@ angular
                         //if form passes
                         this.redirection();
                     },
+                    /**
+                     * Redirection - treat login process when success
+                     */
                     redirection: function () {
                         console.log("Proceed to redirection");
                     }
