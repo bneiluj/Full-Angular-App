@@ -3,6 +3,7 @@ describe('login spec', function () {
 
     //Variables declaration
     var controller,
+        loginService,
         loginMock,
         $scope,
         $browser,
@@ -10,6 +11,7 @@ describe('login spec', function () {
 
     beforeEach(module(
         'app.components.login.ctrl',
+        'app.mocks.loginService',
         'app.mocks.login'
     ));
 
@@ -25,10 +27,15 @@ describe('login spec', function () {
         $browser = $injector.get('$browser');
         $rootScope = $injector.get('$rootScope');
         loginMock = $injector.get('loginMock');
+        loginService = $injector.get('loginService');
+
+        spyOn(loginService, 'login').andCallThrough();
+        spyOn(loginService, 'redirection').andCallThrough();
 
         //Declare controller
         controller = $controller('loginCtrl', {
-            $scope: $scope
+            $scope: $scope,
+            loginService: loginService
         });
     }));
     /**
@@ -41,30 +48,27 @@ describe('login spec', function () {
      * Check if username and password are defined when init
      **/
     it('should not contain username and password when init', function() {
-        expect($scope.user).toBeUndefined();
+        expect($scope.formVerifyObject).toBeUndefined();
     });
     /**
-     * Passing a username and password should not trigger any errors
+     * Should call loginService when login button is triggered
      **/
-    it('should not trigger error if username and email are correct', function() {
+    it('should call loginService when login button is triggered', function() {
         $scope.login(loginMock.goodLogin.user);
-        expect($scope.formVerifyObject.formValidation)
-            .toEqual(loginMock.goodCheckForm.checkForm);
+        expect(loginService.login).toHaveBeenCalled();
     });
     /**
-     * Passing a wrong username but a good password should trigger an error
+     * Should call loginService when login button is triggered
      **/
-    it('should trigger an error if wrong unsername but correct password', function() {
-        $scope.login(loginMock.errorUsername.user);
-        expect($scope.formVerifyObject.formValidation)
-            .toEqual(loginMock.errorNameCheckForm.checkForm);
+    it('should call loginService when login button is triggered', function() {
+        $scope.login(loginMock.goodLogin.user);
+        expect(loginService.login).toHaveBeenCalled();
     });
     /**
-     * Passing a good username but a wrong password should trigger an error
+     * Should define formVerifyObject when login button is triggered
      **/
-    it('should trigger an error if correct username but wrong password', function() {
-        $scope.login(loginMock.errorPassword.user);
-        expect($scope.formVerifyObject.formValidation)
-            .toEqual(loginMock.errorPasswordCheckForm.checkForm);
+    it('Should define formVerifyObject when login button is triggered', function() {
+        $scope.login(loginMock.goodLogin.user);
+        expect($scope.formVerifyObject).toBeDefined();
     });
 });
