@@ -16,6 +16,7 @@ describe('login service', function () {
         $injector,
         _$q_
     ) {
+        
         $httpBackend = $injector.get('$httpBackend');
         loginService = $injector.get('loginService');
         loginMock = $injector.get('loginMock');
