@@ -7,13 +7,13 @@ angular
             goodLogin: {
                 "user": {
                     "username": "Julien Bouteloup",
-                    "password": "justEat"
+                    "password": "bneiluj"
                 }
             },
             errorUsername: {
                 "user": {
                     "username": undefined,
-                    "password": "justEat"
+                    "password": "bneiluj"
                 }
             },
             errorPassword: {

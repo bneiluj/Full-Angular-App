@@ -156,6 +156,7 @@ module.exports = function (grunt) {
         'protractor'
     ]);
     grunt.registerTask('lint', ['jslint']);
+    grunt.registerTask('sass', ['sass']);
     grunt.registerTask('test', ['lint', 'unit', 'e2e']);
     grunt.registerTask('server', [
         'express',

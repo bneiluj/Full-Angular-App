@@ -8,7 +8,7 @@ describe('login page', function () {
         //visit page
         page.visitLoginPage();
         //fill username and password fields
-        page.fillLoginForm("Julien Bouteloup", "justEAT");
+        page.fillLoginForm("Julien Bouteloup", "bneiluj");
         //Click login button
         page.clickLoginButton();
         expect(page.hasClass('passwordGroup', 'has-error')).toBe(false);
@@ -25,7 +25,7 @@ describe('login page', function () {
         //visit page
         page.visitLoginPage();
         //fill only password field
-        page.fillPasswordField("justEat");
+        page.fillPasswordField("bneiluj");
         //Click login button
         page.clickLoginButton();
         expect(page.hasClass('usernameGroup', 'has-error')).toBe(true);
